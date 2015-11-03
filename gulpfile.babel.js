@@ -20,5 +20,12 @@ gulp.task('compile:ect', () => {
         .pipe(gulp.dest('lib/'));
 });
 
+import webpack from 'webpack-stream';
+import webpackConfig from './webpack.config.js';
+gulp.task('webpack', () => {
+    gulp.src(webpackConfig.entry.jsx)
+        .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest('./static'));
+});
 
 gulp.task('default', ['compile:ect', 'copy-lib']);
