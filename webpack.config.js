@@ -1,9 +1,9 @@
 module.exports = {
-  context: __dirname + "/src",
+  context: __dirname + "/lib",
   entry: {
     jsx: "./index.jsx",
     css: "./main.css",
-    html: "./index.ect",
+    html: "./index.html",
   },
 
   output: {
@@ -16,7 +16,7 @@ module.exports = {
       { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "eslint-loader"},
     ],
     loaders: [
-      { test: /\.ect$/, loader: "file?name=[name].html" },
+      { test: /\.html$/, loader: "file?name=[name].[ext]" },
       { test: /\.css$/, loader: "file?name=[name].[ext]" },
       { test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ["react-hot","babel-loader?stage=0&optional=runtime"]},
     ],
