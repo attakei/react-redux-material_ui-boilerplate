@@ -3,7 +3,7 @@ module.exports = {
   entry: {
     jsx: "./index.jsx",
     css: "./main.css",
-    html: "./index.html",
+    html: "./index.ect",
   },
 
   output: {
@@ -16,7 +16,7 @@ module.exports = {
       { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "eslint-loader"},
     ],
     loaders: [
-      { test: /\.html$/, loader: "file?name=[name].[ext]" },
+      { test: /\.ect$/, loader: "file?name=[name].html" },
       { test: /\.css$/, loader: "file?name=[name].[ext]" },
       { test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ["react-hot","babel-loader?stage=0&optional=runtime"]},
     ],
